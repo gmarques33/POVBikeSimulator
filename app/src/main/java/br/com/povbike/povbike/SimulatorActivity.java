@@ -15,6 +15,7 @@ import br.com.povbike.povbike.customview.LedBoard;
 public class SimulatorActivity extends AppCompatActivity {
 
     private LedBoard mLedBoard;
+    private int sectors = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class SimulatorActivity extends AppCompatActivity {
         mLedBoard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mLedBoard.setBytes(generateBytes(16));
+                mLedBoard.setBytes(generateBytes((int) Math.pow(2, ++sectors)));
                 mLedBoard.invalidate();
             }
         });
