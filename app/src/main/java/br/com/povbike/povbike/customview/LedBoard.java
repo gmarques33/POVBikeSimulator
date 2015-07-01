@@ -66,7 +66,7 @@ public class LedBoard extends View {
                 Byte currentByte = mBytes.get(i);
                 for (int c = 0; c < 8; c++) {
                     if (checkBit(currentByte, c)) {
-                        canvas.drawArc(getRectLed(c), 270 + ((360f / mBytes.size()) * i), 360 / mBytes.size(), false, mPaint);
+                        canvas.drawArc(getRectLed(c), 270 + ((360f / mBytes.size()) * i), 360f / mBytes.size(), false, mPaint);
                     }
                 }
             }
